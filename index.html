@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-View Browser</title>
+    <link rel="stylesheet" href="C:\Users\as182\Downloads\index.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>🌐 Multi-View Browser</h1>
+        <div class="controls">
+            <label class="btn"><input type="radio" name="layout" value="grid" checked> Grid</label>
+            <label class="btn"><input type="radio" name="layout" value="columns"> Two Columns</label>
+            <label class="btn"><input type="radio" name="layout" value="single"> Single View</label>
+        </div>
+    </header>
+
+    <main id="container" class="layout-grid">
+        <section class="view" id="view1">
+            <h2>Google</h2>
+            <iframe src="https://www.google.com" title="Google"></iframe>
+        </section>
+
+        <section class="view" id="view2">
+            <h2>YouTube</h2>
+            <iframe src="https://www.youtube.com" title="YouTube"></iframe>
+        </section>
+
+        <section class="view" id="view3">
+            <h2>Wikipedia</h2>
+            <iframe src="https://www.wikipedia.org" title="Wikipedia"></iframe>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Made with ❤️ by <strong>ak Lover</strong> — Multi-View Browser
+    </footer>
+
+    <script>
+        const container = document.getElementById('container');
+        const radios = document.querySelectorAll('input[name=\"layout\"]');
+        radios.forEach(r => r.addEventListener('change', e => {
+            container.classList.remove('layout-grid', 'layout-columns', 'layout-single');
+            container.classList.add('layout-' + e.target.value);
+        }));
+    </script>
+</body>
+
+</html>
