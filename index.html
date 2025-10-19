@@ -3,49 +3,128 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>one Social Login</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Multi Social Login — Demo</title>
     <link rel="stylesheet" href="C:\Users\as182\Downloads\index.css">
 </head>
 
 <body>
-    <main class="card">
-        <div class="brand">ONE SOCIAL LOGIN• <small>LOGIN ONLY</small></div>
+    <div class="page">
+        <header class="hero">
+            <h1>Multi-Social Login — Demo</h1>
+            <p class="muted">This is a UI-only demo for learning. Not a real sign-in form.</p>
+        </header>
 
-        <h1>Sign in</h1>
-        <p class="muted">This is a <strong>ORGINAL</strong> login UI. <em> enter</em> real passwords.</p>
+        <main class="cards">
+            <!-- Card 1: blue theme (inspired feel) -->
+            <section class="card card-blue">
+                <div class="card-head">
+                    <h2>Connect — Blue</h2>
+                    <p class="small">Sign in to continue</p>
+                </div>
 
-        <form id="demoLogin" onsubmit="handleLogin(event)">
-            <label>
-        <span>Email or username</span>
-        <input type="text" name="user" required autocomplete="off">
-      </label>
+                <form class="login-form" action="#" method="post" autocomplete="off">
+                    <label>
+            <span class="label">Email or Phone</span>
+            <input type="text" name="user" placeholder="you@example.com">
+          </label>
 
-            <label>
-        <span>Password</span>
-        <input type="password" name="pass" required>
-      </label>
+                    <label>
+            <span class="label">Password</span>
+            <input type="password" name="pass" placeholder="••••••••">
+          </label>
 
-            <button class="primary" type="submit">Sign in</button>
-        </form>
+                    <div class="actions">
+                        <button class="btn primary" type="submit">Sign In</button>
+                        <a class="link" href="#" onclick="alert('This is a demo only.')">Forgot?</a>
+                    </div>
 
-        <div class="or">— or —</div>
+                    <div class="divider"><span>or</span></div>
 
-        <div class="socials">
-            <button class="social fb" onclick="alert('Demo: use official Facebook Login SDK for real apps')">Continue with Facebook</button>
-            <button class="social google" onclick="alert('Demo: use Google Identity Services for real apps')">Continue with Google</button>
-        </div>
+                    <button class="btn alt" type="button" onclick="alert('Demo social login')">Continue with Demo</button>
+                </form>
 
-        <small class="note">This page is for UI.</small>
-    </main>
+                <footer class="card-foot">New here? <a href="#" onclick="alert('Demo only')">Create account</a></footer>
+            </section>
+
+            <!-- Card 2: warm theme -->
+            <section class="card card-warm">
+                <div class="card-head">
+                    <h2>QuickConnect</h2>
+                    <p class="small">Fast sign in</p>
+                </div>
+
+                <form class="login-form" action="#" method="post" autocomplete="off">
+                    <label>
+            <span class="label">Username</span>
+            <input type="text" name="user2" placeholder="username">
+          </label>
+
+                    <label>
+            <span class="label">Password</span>
+            <input type="password" name="pass2" placeholder="••••••">
+          </label>
+
+                    <div class="actions">
+                        <button class="btn primary" type="submit">Log In</button>
+                        <a class="link" href="#" onclick="alert('Demo only')">Help</a>
+                    </div>
+
+                    <div class="social-row">
+                        <button class="btn circle" title="demo">G</button>
+                        <button class="btn circle" title="demo">A</button>
+                        <button class="btn circle" title="demo">X</button>
+                    </div>
+                </form>
+
+                <footer class="card-foot">Privacy • Terms</footer>
+            </section>
+
+            <!-- Card 3: gradient / insta-like vibe -->
+            <section class="card card-grad">
+                <div class="card-head">
+                    <h2>InstaLite</h2>
+                    <p class="small">Welcome back</p>
+                </div>
+
+                <form class="login-form" action="#" method="post" autocomplete="off">
+                    <label>
+            <span class="label">Email</span>
+            <input type="email" name="email3" placeholder="name@mail.com">
+          </label>
+
+                    <label>
+            <span class="label">Password</span>
+            <input type="password" name="pass3" placeholder="password">
+          </label>
+
+                    <div class="actions">
+                        <button class="btn primary" type="submit">Sign In</button>
+                        <a class="link" href="#" onclick="alert('Demo only')">Reset</a>
+                    </div>
+
+                    <p class="small muted center">Or sign in with</p>
+                    <div class="social-row">
+                        <button class="btn small" onclick="alert('Demo social')">Facebook</button>
+                        <button class="btn small" onclick="alert('Demo social')">Twitter</button>
+                    </div>
+                </form>
+
+                <footer class="card-foot">Not a member? <a href="#" onclick="alert('Demo only')">Join</a></footer>
+            </section>
+        </main>
+
+        <footer class="page-foot">
+            <small>UI demo — For learning & design only. Use OAuth for real sign-in in production.</small>
+        </footer>
+    </div>
 
     <script>
-        function handleLogin(e) {
-            e.preventDefault();
-            // demo behavior only — never send or store real credentials here
-            const u = e.target.user.value;
-            alert('Demo login captured for user: ' + u + '\\n(This is a local demo — credentials are not sent anywhere.)');
-        }
+        // small accessibility: focus first input on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstInput = document.querySelector('input');
+            if (firstInput) firstInput.focus();
+        });
     </script>
 </body>
 
