@@ -2,50 +2,50 @@
 <html lang="bn">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-View Browser</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>one Social Login</title>
     <link rel="stylesheet" href="C:\Users\as182\Downloads\index.css">
 </head>
 
 <body>
-    <header class="topbar">
-        <h1>🌐 Multi-View Browser</h1>
-        <div class="controls">
-            <label class="btn"><input type="radio" name="layout" value="grid" checked> Grid</label>
-            <label class="btn"><input type="radio" name="layout" value="columns"> Two Columns</label>
-            <label class="btn"><input type="radio" name="layout" value="single"> Single View</label>
+    <main class="card">
+        <div class="brand">ONE SOCIAL LOGIN• <small>LOGIN ONLY</small></div>
+
+        <h1>Sign in</h1>
+        <p class="muted">This is a <strong>ORGINAL</strong> login UI. <em> enter</em> real passwords.</p>
+
+        <form id="demoLogin" onsubmit="handleLogin(event)">
+            <label>
+        <span>Email or username</span>
+        <input type="text" name="user" required autocomplete="off">
+      </label>
+
+            <label>
+        <span>Password</span>
+        <input type="password" name="pass" required>
+      </label>
+
+            <button class="primary" type="submit">Sign in</button>
+        </form>
+
+        <div class="or">— or —</div>
+
+        <div class="socials">
+            <button class="social fb" onclick="alert('Demo: use official Facebook Login SDK for real apps')">Continue with Facebook</button>
+            <button class="social google" onclick="alert('Demo: use Google Identity Services for real apps')">Continue with Google</button>
         </div>
-    </header>
 
-    <main id="container" class="layout-grid">
-        <section class="view" id="view1">
-            <h2>Google</h2>
-            <iframe src="https://www.google.com" title="Google"></iframe>
-        </section>
-
-        <section class="view" id="view2">
-            <h2>YouTube</h2>
-            <iframe src="https://www.youtube.com" title="YouTube"></iframe>
-        </section>
-
-        <section class="view" id="view3">
-            <h2>Wikipedia</h2>
-            <iframe src="https://www.wikipedia.org" title="Wikipedia"></iframe>
-        </section>
+        <small class="note">This page is for UI.</small>
     </main>
 
-    <footer class="footer">
-        Made with ❤️ by <strong>ak Lover</strong> — Multi-View Browser
-    </footer>
-
     <script>
-        const container = document.getElementById('container');
-        const radios = document.querySelectorAll('input[name=\"layout\"]');
-        radios.forEach(r => r.addEventListener('change', e => {
-            container.classList.remove('layout-grid', 'layout-columns', 'layout-single');
-            container.classList.add('layout-' + e.target.value);
-        }));
+        function handleLogin(e) {
+            e.preventDefault();
+            // demo behavior only — never send or store real credentials here
+            const u = e.target.user.value;
+            alert('Demo login captured for user: ' + u + '\\n(This is a local demo — credentials are not sent anywhere.)');
+        }
     </script>
 </body>
 
